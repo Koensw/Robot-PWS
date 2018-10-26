@@ -15,4 +15,4 @@ Code for robot implemented as part of high school final project. The robot has b
 	- basic robot control in time units
 
 === COPYRIGHT ===
-(c) 2012-2013 Koen Wolters en Erik Kooistra
+(c) 2012-2013 Koen Wolters and Erik Kooistra
