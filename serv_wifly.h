@@ -1,9 +1,9 @@
-/* 
+/*
  * PWS-Robot
  * (c) 2012 Koen Wolters en Erik Kooistra
- * 
+ *
  * Regelt de communicatie met de WiFly
- * 
+ *
  * Gebruikt driver D2
  */
 
@@ -13,8 +13,8 @@
 #include "ch.h"
 #include "hal.h"
 
-typedef enum {S_OK, S_ERROR, S_OVERFLOW, S_TIMEOUT, S_RESET} State;
-typedef enum {M_OK, M_ERROR, M_MESSAGE} Message;
+typedef enum { S_OK, S_ERROR, S_OVERFLOW, S_TIMEOUT, S_RESET } State;
+typedef enum { M_OK, M_ERROR, M_MESSAGE } Message;
 
 typedef Message (*ProtocolCallback)(char id[10], char args[1024]);
 
@@ -28,17 +28,20 @@ typedef Message (*ProtocolCallback)(char id[10], char args[1024]);
  * baud = baudrate
  * func = function to callback when data is received (and no listener)
  */
-int wiflyInit(SerialDriver *serial, ioportid_t gpio, int rx, int tx, int baud, ProtocolCallback func);
+int wiflyInit(SerialDriver *serial, ioportid_t gpio, int rx, int tx, int baud,
+              ProtocolCallback func);
 /*
  * Send message
- */ 
+ */
 State wiflySend(char *msg);
 /*
- * Read answer command (WARNING: lines should be at most 128 bytes and all should fit in total)
+ * Read answer command (WARNING: lines should be at most 128 bytes and all
+ * should fit in total)
  */
 State wiflyReadCommand(char *cmd, char *total);
 /*
- * Send command and check if answer is expected (WARNING: expect answer to be at most 128 bytes)
+ * Send command and check if answer is expected (WARNING: expect answer to be at
+ * most 128 bytes)
  */
 State wiflySendCommandOK(char *cmd);
 State wiflySendCommand(char *cmd, const char *ans);
@@ -52,11 +55,11 @@ State wiflyRead(char *cmd);
 State wiflyConnect(char *ssid, char *phrase);
 
 /* PRIVATE METHODS */
-//send
+// send
 void wifly_send(char *msg);
-//receive
+// receive
 State wifly_receive(char *cmd, int MAX_IN);
-//wifly thread loop
+// wifly thread loop
 msg_t wifly_loop(void *arg);
 
 #endif

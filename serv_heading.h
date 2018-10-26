@@ -1,7 +1,7 @@
 #include "ch.h"
+#include "chprintf.h"
 #include "hal.h"
 #include "lis302dl.h"
-#include "chprintf.h"
 
 #include <math.h>
 
@@ -16,6 +16,6 @@ int getHeading(void);
 float heading_calculate(void);
 int16_t complement2signed(uint8_t msb, uint8_t lsb);
 int memsSetup(SPIDriver *spi, uint8_t DMA);
-int memsSetRegister(uint8_t reg1, uint8_t reg2,uint8_t reg3);
+int memsSetRegister(uint8_t reg1, uint8_t reg2, uint8_t reg3);
 int headingSetup(void);
 #endif

@@ -1,9 +1,9 @@
-/* 
+/*
  * PWS-Robot
  * (c) 2012 Koen Wolters en Erik Kooistra
- * 
+ *
  * Regelt de communicatie met de motoren
- * 
+ *
  * Gebruikt driver D2
  */
 
@@ -13,22 +13,23 @@
 #include "ch.h"
 #include "hal.h"
 
-typedef enum {D_FORWARD, D_BACKWARD} Direction;
+typedef enum { D_FORWARD, D_BACKWARD } Direction;
 
 /* PUBLIC METHODS */
-int motorInit(ioportid_t gpio, int p11, int p12, int p21, int p22, PWMDriver *pwm, int lpa, int lpb, int rpa, int rpb);
+int motorInit(ioportid_t gpio, int p11, int p12, int p21, int p22,
+              PWMDriver *pwm, int lpa, int lpb, int rpa, int rpb);
 
-/* 
+/*
  * Left forward and backward
  */
 void motorLeftForwardS(int);
 void motorLeftBackwardS(int);
-/* 
+/*
  * Right forward and backward
  */
 void motorRightForwardS(int);
 void motorRightBackwardS(int);
-/* 
+/*
  * Two motors
  */
 void motorForwardS(int);
@@ -37,9 +38,9 @@ void motorBackwardS(int);
  * Stop motor
  */
 void motorLeftOff(void);
-//void motorLeftBreak();
+// void motorLeftBreak();
 void motorRightOff(void);
-//void motorRightBreak();
+// void motorRightBreak();
 void motorOff(void);
 
 /* Motors active */
@@ -48,7 +49,7 @@ int motorRightActive(void);
 int motorActive(void);
 /*
  * Set motor speed
- */ 
+ */
 int motorSetSpeed(int s);
 
 /* PRIVATE METHODS */
