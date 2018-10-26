@@ -1,17 +1,18 @@
 Profielwerkstuk Robot
 ---------------------
-Geprogrammeerde code robot gebouwd voor ons profielwerkstuk. Deze robot heeft tot eerste doel om een kaart van zijn omgeving te kunnen maken.
+Code for robot implemented as part of high school final project. The robot has built using the STM32F4 Discovery platform, and the goal was to create a basic remote-controlled robot from scratch. The report is written in Dutch.
 
-=== INSTALLATIE ===
-1. Volg de volgende instructies: http://cu.rious.org/make/stm32f4-discovery-board-with-linux/
-2. Commando: make
-3. Commando: st-flash write build/pws.bin 0x8000000
-4. Herstart de robot (door op de RESET-knop te drukken)
+=== INSTALLATION ===
+1. Follow the instructions here: http://cu.rious.org/make/stm32f4-discovery-board-with-linux/
+2. Run: make
+3. Run: st-flash write build/pws.bin 0x8000000
+4. Restart by pressing the RESET-button.
 
-=== VERSIE ===
-1.0: eerste publieke versie
-	- rijden in tijdseenheden
-	- uitlezen van de sensoren
-	
+=== CHANGELOG ===
+1.0: first public version (June 2013)
+	- reading of sensors
+  - sending commands over WiFi
+	- basic robot control in time units
+
 === COPYRIGHT ===
-(c) 2012-2013 Koen en Erik 
+(c) 2012-2013 Koen Wolters en Erik Kooistra
